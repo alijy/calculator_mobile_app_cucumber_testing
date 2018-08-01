@@ -4,6 +4,7 @@ Feature: Calculator Functionality
   I want to be able to use a calculator
   So that I can do calculations quicker
 
+  @add_two_nums
   Scenario: Adding two numbers
   Given I am on the calculator app
   And I click a number
@@ -12,6 +13,7 @@ Feature: Calculator Functionality
   When I click equals
   Then I should receive adding two numbers answer
 
+  @subtract_two_nums
   Scenario: Subtracting two numbers
   Given I am on the calculator app
   And I click a number
@@ -20,6 +22,7 @@ Feature: Calculator Functionality
   When I click equals
   Then I should recieve the subtracting two numbers answer
 
+  @divinding_two_nums
   Scenario: Dividing two numbers
   Given I am on the calculator app
   And I click a number
@@ -28,6 +31,7 @@ Feature: Calculator Functionality
   When I click equals
   Then I should recieve the dividing two numbers answer
 
+  @multiplying_two_nums
   Scenario: Multiplying two numbers
   Given I am on the calculator app
   And I click a number
