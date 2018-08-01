@@ -87,10 +87,11 @@ Feature: Calculator Functionality
   Scenario: sin hyperbolic of a Number
   Given I am on the calculator app
   And I click hyp button
+  And I click sin button
   And I click a number
   And I click close bracket
   When I click equals
-  Then I should receive the arc sin of a number answer
+  Then I should receive the sin hyperbolic of a number answer
 
   @cos_of_num
   Scenario: cos of a Number
@@ -110,6 +111,16 @@ Feature: Calculator Functionality
   When I click equals
   Then I should receive the arc cos of a number answer
 
+  @cosh_of_num
+  Scenario: cos hyperbolic of a Number
+  Given I am on the calculator app
+  And I click hyp button
+  And I click cos button
+  And I click a number
+  And I click close bracket
+  When I click equals
+  Then I should receive the cos hyperbolic of a number answer
+
   @tan_of_num
   Scenario: tan of a Number
   Given I am on the calculator app
@@ -127,6 +138,16 @@ Feature: Calculator Functionality
   And I click close bracket
   When I click equals
   Then I should receive the arc tan of a number answer
+
+  @tanh_of_num
+  Scenario: tan hyperbolic of a Number
+  Given I am on the calculator app
+  And I click hyp button
+  And I click sin button
+  And I click a number
+  And I click close bracket
+  When I click equals
+  Then I should receive the sin hyperbolic of a number answer
 
   @y_to_the_pow_of_x
   Scenario: Y to the power of X
@@ -181,11 +202,29 @@ Feature: Calculator Functionality
   When I click equals
   Then I should receive the cube root of a number answer
 
-  @e_to_the_power
-  Scenario: e to the power of a number
+  @one_over_x
+  Scenario: one divided by x
   Given I am on the calculator app
-  And I click e to the power of
+  And I click one over x
+  And I click a number
+  And I click close bracket
+  And I click close bracket
+  When I click equals
+  Then I should receive one divided by x answer
+
+  @log_of_num
+  Scenario: log of a number
+  Given I am on the calculator app
+  And I click log button
   And I click a number
   And I click close bracket
   When I click equals
-  Then I should receive e to the power of a number answer
+  Then I should receive the log of a number answer
+
+  @percent
+  Scenario: percent of a number
+  Given I am on the calculator app
+  And I click a number
+  And I click percent
+  When I click equals
+  Then I should receive percent of a number answer
