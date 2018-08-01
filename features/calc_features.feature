@@ -77,7 +77,10 @@ Feature: Calculator Functionality
   @arcsin_of_num
   Scenario: arc sin of a Number
   Given I am on the calculator app
-  And I click arc sin button
+  And I click shift button
+  And I click sin button
+  # And I click zero button
+  # And I click the point button
   And I click a number
   And I click close bracket
   When I click equals
@@ -105,7 +108,10 @@ Feature: Calculator Functionality
   @arccos_of_num
   Scenario: arc cos of a Number
   Given I am on the calculator app
-  And I click arc cos button
+  And I click shift button
+  And I click cos button
+  # And I click zero button
+  # And I click the point button
   And I click a number
   And I click close bracket
   When I click equals
@@ -133,7 +139,10 @@ Feature: Calculator Functionality
   @arctan_of_num
   Scenario: arc tan of a Number
   Given I am on the calculator app
-  And I click arc tan button
+  And I click shift button
+  And I click tan button
+  # And I click zero button
+  # And I click the point button
   And I click a number
   And I click close bracket
   When I click equals
@@ -147,7 +156,7 @@ Feature: Calculator Functionality
   And I click a number
   And I click close bracket
   When I click equals
-  Then I should receive the sin hyperbolic of a number answer
+  Then I should receive the tan hyperbolic of a number answer
 
   @y_to_the_pow_of_x
   Scenario: Y to the power of X
