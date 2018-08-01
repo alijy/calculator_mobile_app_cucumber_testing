@@ -16,4 +16,4 @@ end
 
 Appium::Driver.new(opts, true)
 
-World(BudgetApp)
+World(CalcApp)
