@@ -20,7 +20,7 @@ Feature: Calculator Functionality
   And I click subtract
   And I click another number
   When I click equals
-  Then I should recieve the subtracting two numbers answer
+  Then I should receive the subtracting two numbers answer
 
   @dividing_two_nums
   Scenario: Dividing two numbers
@@ -29,7 +29,7 @@ Feature: Calculator Functionality
   And I click divide
   And I click another number
   When I click equals
-  Then I should recieve the dividing two numbers answer
+  Then I should receive the dividing two numbers answer
 
   @multiplying_two_nums
   Scenario: Multiplying two numbers
@@ -38,13 +38,21 @@ Feature: Calculator Functionality
   And I click multiply
   And I click another number
   When I click equals
-  Then I should recieve the multiplying two numbers answer
+  Then I should receive the multiplying two numbers answer
 
   @sqrt_of_num
   Scenario: Square root of a number
   Given I am on the calculator app
+  And I click sqrt button
   And I click a number
-  And I click multiply
-  And I click another number
+  And I click close bracket
   When I click equals
-  Then I should recieve the multiplying two numbers answer
+  Then I should receive the sqrt of the numbers
+
+  @sq_of_num
+  Scenario: Square of a Number
+  Given I am on the calculator app
+  And I click a number
+  And I click square button
+  When I click equals
+  Then I should receive the square of a number answer
