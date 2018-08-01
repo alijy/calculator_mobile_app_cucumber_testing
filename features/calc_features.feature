@@ -40,4 +40,11 @@ Feature: Calculator Functionality
   When I click equals
   Then I should recieve the multiplying two numbers answer
 
-  
+  @sqrt_of_num
+  Scenario: Square root of a number
+  Given I am on the calculator app
+  And I click a number
+  And I click multiply
+  And I click another number
+  When I click equals
+  Then I should recieve the multiplying two numbers answer
