@@ -1,5 +1,5 @@
 Given("I am on the calculator app") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.on_app?
 end
 
 When("I click a number") do

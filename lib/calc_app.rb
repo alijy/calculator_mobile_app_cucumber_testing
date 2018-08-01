@@ -2,7 +2,7 @@ require_relative "pages/main_page"
 
 module CalcApp
 
-  def main
+  def mainpage
     MainPage.new
   end
 
