@@ -22,7 +22,7 @@ Feature: Calculator Functionality
   When I click equals
   Then I should recieve the subtracting two numbers answer
 
-  @divinding_two_nums
+  @dividing_two_nums
   Scenario: Dividing two numbers
   Given I am on the calculator app
   And I click a number
@@ -39,3 +39,5 @@ Feature: Calculator Functionality
   And I click another number
   When I click equals
   Then I should recieve the multiplying two numbers answer
+
+  
