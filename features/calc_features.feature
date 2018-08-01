@@ -88,7 +88,8 @@ Feature: Calculator Functionality
   @arcsin_of_num
   Scenario: arc sin of a Number
     Given I am on the calculator app
-    When I click shift button
+    When I click radian button
+    And I click shift button
     And I click sin button
     # And I click zero button
     # And I click the point button

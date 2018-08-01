@@ -1,22 +1,25 @@
+NUM1 = "0.9876"
+NUM2 = "54.321"
+
+
 Given("I am on the calculator app") do
   mainpage.on_app?
 end
 
 When("I click a number") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.enter_number NUM1
 end
 
 When("I click add") do
   pending # Write code here that turns the phrase above into concrete actions
-
 end
 
 When("I click another number") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.enter_number NUM2
 end
 
 When("I click equals") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_equal
 end
 
 Then("I should receive adding two numbers answer") do
@@ -40,7 +43,6 @@ Then("I should receive the dividing two numbers answer") do
 end
 
 When("I click multiply") do
-
   pending # Write code here that turns the phrase above into concrete actions
 end
 
@@ -53,16 +55,19 @@ When("I click sqrt button") do
 end
 
 When("I click close bracket") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_close_par
 end
 
 Then("I should receive the sqrt of the numbers") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("I click shift button") do
+When("I click radian button") do
+  mainpage.click_radian
+end
 
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click shift button") do
+  mainpage.click_shift
 end
 
 Then("I should receive the cube root of a number answer") do
@@ -81,9 +86,8 @@ Then("I should receive the cube of a number answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-
 When("I click sin button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_sin
 end
 
 Then("I should receive the sin of a number answer") do
@@ -91,7 +95,8 @@ Then("I should receive the sin of a number answer") do
 end
 
 Then("I should receive the arc sin of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  result = mainpage.on_display
+  expect(result.to_f).to eq Math.asin(NUM1.to_f).truncate(result.split('.')[1].size)
 end
 
 When("I click hyp button") do
@@ -101,7 +106,6 @@ end
 Then("I should receive the sin hyperbolic of a number answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
-
 
 When("I click cos button") do
   pending # Write code here that turns the phrase above into concrete actions
@@ -122,7 +126,6 @@ end
 When("I click tan button") do
   pending # Write code here that turns the phrase above into concrete actions
 end
-
 
 Then("I should receive the tan of a number answer") do
   pending # Write code here that turns the phrase above into concrete actions
@@ -145,7 +148,6 @@ Then("I should receive y to the x of a number answer") do
 end
 
 When("I click {int} button") do |int|
-
   pending # Write code here that turns the phrase above into concrete actions
 end
 
@@ -160,7 +162,6 @@ end
 Then("I should receive Pi multiplied to a number answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
-
 
 When("I click log button") do
   pending # Write code here that turns the phrase above into concrete actions
@@ -181,7 +182,6 @@ end
 Then("I should receive the ln of a number answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
-
 
 Then("I should receive e to the power of a number answer") do
   pending # Write code here that turns the phrase above into concrete actions

@@ -49,4 +49,42 @@ class MainPage
     $driver.find_element(:id, BUTTON_AC).click
   end
 
+  def click_radian
+    $driver.find_element(:id, BUTTON_RAD).click
+  end
+
+  def click_shift
+    $driver.find_element(:id, BUTTON_SHIFT).click
+  end
+
+  def click_sin
+    $driver.find_element(:id, BUTTON_SIN).click
+  end
+
+  def enter_number num
+    num.split('').each do |c|
+      (c == ".") ? click_dot : click_digit(c)
+    end
+  end
+
+  def click_digit i
+    $driver.find_element(:id, eval("BUTTON_#{i}")).click
+  end
+
+  def click_dot
+    $driver.find_element(:id, BUTTON_DOT).click
+  end
+
+  def click_close_par
+    $driver.find_element(:id, BUTTON_CLOSE_PAR).click
+  end
+
+  def click_equal
+    $driver.find_element(:id, BUTTON_EQUAL).click
+  end
+
+  def on_display
+    $driver.find_element(:id, DISPLAY).text
+  end
+
 end
