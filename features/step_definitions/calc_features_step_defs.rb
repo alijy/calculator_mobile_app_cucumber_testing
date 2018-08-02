@@ -251,3 +251,19 @@ Then("I should receive one divided by x answer") do
   result = mainpage.on_display
   expect(result).to eq ONE_DIVIDED_BY_NUM_ANS.truncate(result.split('.')[1].size).to_s
 end
+
+When("I click delete") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should receive Deleting an input answer") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When("I click answer") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should receive Adding a previous answer") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
