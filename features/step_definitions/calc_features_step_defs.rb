@@ -23,7 +23,7 @@ TANHYP_NUM_ANS = Math.tanh(NUM1)
 Y_TO_POWER_X_ANS = NUM1 ** NUM2
 FACTORIAL_NUM_ANS = (1..DIGIT).inject(:*)
 PI_TO_POWER_X_ANS = Math::PI ** NUM1
-LOG_NUM_ANS = Math.log(NUM1)
+LOG_NUM_ANS = Math.log10(NUM1)
 TEN_TO_POWER_X_ANS = 10 ** NUM1
 LN_NUM_ANS = Math.log(NUM1, Math::E)
 E_TO_POWER_X_ANS = (Math::E) ** NUM1
@@ -32,6 +32,7 @@ ONE_DIVIDED_BY_NUM_ANS = 1 / (NUM1)
 DELETING_AN_INPUT_ANS = NUM1 + NUM2
 ADDING_A_PREVIOUS_ANS = NUM1 + NUM2 + NUM1
 PI_MULTI_BY_A_NUM = Math::PI*NUM1
+DELETE_INPUT_ANS = NUM1 + NUM2
 
 Given("I am on the calculator app") do
   mainpage.on_app?
@@ -136,6 +137,7 @@ end
 Then("I should receive the arc sin of a number answer") do
   result = mainpage.on_display
   expect(result.to_f).to eq ARCSIN_NUM_ANS.round(result.split('.')[1].size)
+  # expect(result).to eq ("%.#{result.split('.')[1].size}f" % ARCSIN_NUM_ANS)
 end
 
 When("I click hyp button") do
@@ -189,7 +191,7 @@ When("I click y^x button") do
   mainpage.click_y_to_x
 end
 
-Then("I should receive y to the x of a number answer") do
+Then("I should receive y to the power x answer") do
   result = mainpage.on_display
   expect(result).to eq Y_TO_POWER_X_ANS.round(result.split('.')[1].size).to_s
 end
@@ -259,17 +261,19 @@ Then("I should receive one divided by x answer") do
 end
 
 When("I click delete") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_back # Write code here that turns the phrase above into concrete actions
 end
 
 Then("I should receive Deleting an input answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  result = mainpage.on_display
+  expect(result).to eq DELETE_INPUT_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_ans
 end
 
 Then("I should receive Adding a previous answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  result = mainpage.on_display
+  expect(result).to eq ADDING_A_PREVIOUS_ANS.round(result.split('.')[1].size).to_s
 end
