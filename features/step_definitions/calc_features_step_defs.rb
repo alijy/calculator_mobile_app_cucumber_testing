@@ -223,7 +223,8 @@ end
 
 Then("I should receive the log of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq LOG_NUM_ANS.round(result.split('.')[1].size).to_s
+  # expect(result).to eq LOG_NUM_ANS.round(result.split('.')[1].size).to_s
+  expect(result).to eq "−"+(LOG_NUM_ANS.round(result.split('.')[1].size)).abs.to_s
 end
 
 Then("I should receive ten to the power of a number answer") do

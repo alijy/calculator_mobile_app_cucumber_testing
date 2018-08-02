@@ -43,7 +43,7 @@ class MainPage
   BUTTON_8 = "com.faqihstudio.scientificcalculator:id/button8"
   BUTTON_9 = "com.faqihstudio.scientificcalculator:id/button9"
 
-  DISPLAY = "com.faqihstudio.scientificcalculator:id/txtOutput"
+  DISPLAY = "android.widget.EditText"
 
 
   def on_app?
@@ -85,8 +85,8 @@ class MainPage
   end
 
   def on_display
-    sleep 3
-    $driver.find_element(:id, DISPLAY).text
+    # puts ">>>>>>>#{$driver.find_element(:id, /^com.faqihstudio.scientificcalculator:id\/txt[a-z]*$/).text}"
+    $driver.find_element(:class, DISPLAY).text
   end
 
   def click_plus
