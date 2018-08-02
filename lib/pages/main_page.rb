@@ -87,4 +87,88 @@ class MainPage
     $driver.find_element(:id, DISPLAY).text
   end
 
+  def click_plus
+    $driver.find_element(:id, BUTTON_PLUS).click
+  end
+
+  def click_subtract
+    $driver.find_element(:id, BUTTON_SUBTRACT).click
+  end
+
+  def click_multiply
+    $driver.find_element(:id, BUTTON_MULTIPLY).click
+  end
+
+  def click_divide
+    $driver.find_element(:id, BUTTON_DIVIDE).click
+  end
+
+  def click_fse
+    $driver.find_element(:id, BUTTON_FSE).click
+  end
+
+  def click_mr
+    $driver.find_element(:id, BUTTON_MR).click
+  end
+
+  def click_ms
+    $driver.find_element(:id, BUTTON_MS).click
+  end
+
+  def click_mp
+    $driver.find_element(:id, BUTTON_MP).click
+  end
+
+  def click_hyp
+    $driver.find_element(:id, BUTTON_HYP).click
+  end
+
+  def click_cos
+    $driver.find_element(:id, BUTTON_COS).click
+  end
+
+  def click_tan
+    $driver.find_element(:id, BUTTON_TAN).click
+  end
+
+  def click_ln
+    $driver.find_element(:id, BUTTON_LN).click
+  end
+
+  def click_log
+    $driver.find_element(:id, BUTTON_LOG).click
+  end
+
+  def click_sqrt
+    $driver.find_element(:id, BUTTON_SQRT).click
+  end
+
+  def click_sqaure
+    $driver.find_element(:id, BUTTON_SQUARE).click
+  end
+
+  def click_percent
+    $driver.find_element(:id, BUTTON_PERCENT).click
+  end
+
+  def click_open_par
+    $driver.find_element(:id, BUTTON_OPEN_PAR).click
+  end
+
+  def click_back
+    $driver.find_element(:id, BUTTON_BACK).click
+  end
+
+  def click_ans
+    $driver.find_element(:id, BUTTON_ANS).click
+  end
+
+  def click_exp
+    $driver.find_element(:id, BUTTON_EXP).click
+  end
+
+  def click_y_to_x
+    $driver.find_element(:id, BUTTON_Y_TO_X).click
+  end
+
 end
