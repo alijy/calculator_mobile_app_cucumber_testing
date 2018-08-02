@@ -204,8 +204,7 @@ When("I click a digit") do
 end
 
 Then("I should receive factorial of a number answer") do
-  result = mainpage.on_display
-  expect(result).to eq FACTORIAL_NUM_ANS.round(result.split('.')[1].size).to_s
+  expect(mainpage.on_display.to_i).to eq FACTORIAL_NUM_ANS
 end
 
 When("I click Pi") do
