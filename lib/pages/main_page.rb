@@ -186,6 +186,7 @@ class MainPage
     $driver.find_element(:id, BUTTON_SHIFT).click
     $driver.find_element(:id, BUTTON_0).click
   end
+  
   def click_history_item i
     $driver.find_elements(:class, HISTORY_ITEMS)[i].click
   end

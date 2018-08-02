@@ -285,8 +285,3 @@ end
 When("I click on a previous answer from the history") do
   mainpage.click_history_item 0  # Write code here that turns the phrase above into concrete actions
 end
-
-Then("I should receive a previous answer") do
-  result = mainpage.on_display
-  expect(result).to eq ADD_TWO_NUMS_ANS.round(result.split('.')[1].size).to_s # Write code here that turns the phrase above into concrete actions
-end
