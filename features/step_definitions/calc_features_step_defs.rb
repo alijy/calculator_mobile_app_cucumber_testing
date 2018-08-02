@@ -21,7 +21,7 @@ TAN_NUM_ANS = Math.tan(NUM1)
 ARCTAN_NUM_ANS = Math.atan(NUM1)
 TANHYP_NUM_ANS = Math.tanh(NUM1)
 Y_TO_POWER_X_ANS = NUM1 ** NUM2
-FACTORIAL_NUM_ANS = Math::Gamma(DIGIT+1).to_i
+# FACTORIAL_NUM_ANS = Math::Gamma(DIGIT+1).to_i
 PI_TO_POWER_X_ANS = Math::PI ** NUM1
 LOG_NUM_ANS = Math.log(NUM1)
 TEN_TO_POWER_X_ANS = 10 ** NUM1
@@ -41,7 +41,7 @@ When("I click a number") do
 end
 
 When("I click add") do
-pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_plus
 end
 
 When("I click another number") do
@@ -53,15 +53,16 @@ When("I click equals") do
 end
 
 Then("I should receive adding two numbers answer") do
-  expect(mainpage.on_display).to eq ADD_TWO_NUMS_ANS
+  expect(mainpage.on_display.to_f).to eq ADD_TWO_NUMS_ANS
 end
 
 When("I click subtract") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_subtract
 end
 
 Then("I should receive the subtracting two numbers answer") do
-  expect(mainpage.on_display).to eq SUB_TWO_NUMS_ANS
+  # puts mainpage.on_display.to_f
+  expect(mainpage.on_display).to eq "−"+(SUB_TWO_NUMS_ANS).abs.to_s
 end
 
 When("I click divide") do
