@@ -190,8 +190,9 @@ When("I click y^x button") do
   mainpage.click_y_to_x
 end
 
-Then("I should receive y to the x of a number answer") do
+Then("I should receive y to the power x answer") do
   result = mainpage.on_display
+  puts result
   expect(result).to eq Y_TO_POWER_X_ANS.truncate(result.split('.')[1].size).to_s
 end
 

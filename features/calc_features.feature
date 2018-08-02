@@ -174,10 +174,10 @@ Feature: Calculator Functionality
     Given I am on the calculator app
     When I click a number
     And I click y^x button
-    And I click a number
+    And I click another number
     And I click close bracket
     And I click equals
-    Then I should receive y to the x of a number answer
+    Then I should receive y to the power x answer
 
   @factorial_of_num
   Scenario: factorial of a number
