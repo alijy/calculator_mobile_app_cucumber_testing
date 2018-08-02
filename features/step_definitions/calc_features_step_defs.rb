@@ -23,7 +23,7 @@ TANHYP_NUM_ANS = Math.tanh(NUM1)
 Y_TO_POWER_X_ANS = NUM1 ** NUM2
 FACTORIAL_NUM_ANS = (1..DIGIT).inject(:*)
 PI_TO_POWER_X_ANS = Math::PI ** NUM1
-LOG_NUM_ANS = Math.log(NUM1)
+LOG_NUM_ANS = Math.log10(NUM1)
 TEN_TO_POWER_X_ANS = 10 ** NUM1
 LN_NUM_ANS = Math.log(NUM1, Math::E)
 E_TO_POWER_X_ANS = (Math::E) ** NUM1
@@ -55,7 +55,7 @@ end
 
 Then("I should receive adding two numbers answer") do
   result = mainpage.on_display
-  expect(result).to eq ADD_TWO_NUMS_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq ADD_TWO_NUMS_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click subtract") do
@@ -72,7 +72,7 @@ end
 
 Then("I should receive the dividing two numbers answer") do
   result = mainpage.on_display
-  expect(result).to eq DIV_TWO_NUMS_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq DIV_TWO_NUMS_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click multiply") do
@@ -81,7 +81,7 @@ end
 
 Then("I should receive the multiplying two numbers answer") do
   result = mainpage.on_display
-  expect(result).to eq MULT_TWO_NUMS_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq MULT_TWO_NUMS_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click sqrt button") do
@@ -94,7 +94,7 @@ end
 
 Then("I should receive the sqrt of the numbers") do
   result = mainpage.on_display
-  expect(result).to eq SQRT_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq SQRT_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click radian button") do
@@ -107,7 +107,7 @@ end
 
 Then("I should receive the cube root of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq CUBE_ROOT_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq CUBE_ROOT_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click square button") do
@@ -116,12 +116,12 @@ end
 
 Then("I should receive the square of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq SQUARE_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq SQUARE_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive the cube of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq CUBE_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq CUBE_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click sin button") do
@@ -130,7 +130,7 @@ end
 
 Then("I should receive the sin of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq SIN_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq SIN_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive the arc sin of a number answer") do
@@ -164,7 +164,7 @@ end
 
 Then("I should receive the cos hyperbolic of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq COSHYP_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq COSHYP_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click tan button") do
@@ -173,17 +173,17 @@ end
 
 Then("I should receive the tan of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq TAN_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq TAN_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive the arc tan of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq ARCTAN_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq ARCTAN_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive the tan hyperbolic of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq TANHYP_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq TANHYP_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click y^x button") do
@@ -192,8 +192,7 @@ end
 
 Then("I should receive y to the power x answer") do
   result = mainpage.on_display
-  puts result
-  expect(result).to eq Y_TO_POWER_X_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq Y_TO_POWER_X_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click factorial") do
@@ -206,7 +205,7 @@ end
 
 Then("I should receive factorial of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq FACTORIAL_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq FACTORIAL_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click Pi") do
@@ -215,7 +214,7 @@ end
 
 Then("I should receive Pi multiplied to a number answer") do
   result = mainpage.on_display
-  expect(result).to eq PI_MULTI_BY_A_NUM.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq PI_MULTI_BY_A_NUM.round(result.split('.')[1].size).to_s
 end
 
 When("I click log button") do
@@ -224,12 +223,12 @@ end
 
 Then("I should receive the log of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq LOG_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq LOG_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive ten to the power of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq TEN_TO_POWER_X_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq TEN_TO_POWER_X_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click ln button") do
@@ -238,12 +237,12 @@ end
 
 Then("I should receive the ln of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq LN_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq LN_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive e to the power of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq E_TO_POWER_X_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq E_TO_POWER_X_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click percent button") do
@@ -252,12 +251,12 @@ end
 
 Then("I should receive percent of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq PERCENT_OF_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq PERCENT_OF_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive one divided by x answer") do
   result = mainpage.on_display
-  expect(result).to eq ONE_DIVIDED_BY_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq ONE_DIVIDED_BY_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click delete") do
