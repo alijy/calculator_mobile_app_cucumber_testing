@@ -54,7 +54,7 @@ When("I click equals") do
 end
 
 Then("I should receive adding two numbers answer") do
-  expect(mainpage.on_display).to eq ADD_TWO_NUMS_ANS.to_s
+  expect(mainpage.on_display.to_f).to eq ADD_TWO_NUMS_ANS
 end
 
 When("I click subtract") do
@@ -62,7 +62,8 @@ When("I click subtract") do
 end
 
 Then("I should receive the subtracting two numbers answer") do
-  expect(mainpage.on_display).to eq SUB_TWO_NUMS_ANS.to_s
+  # puts mainpage.on_display.to_f
+  expect(mainpage.on_display).to eq "−"+(SUB_TWO_NUMS_ANS).abs.to_s
 end
 
 When("I click divide") do
