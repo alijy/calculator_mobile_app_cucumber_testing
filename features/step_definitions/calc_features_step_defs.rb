@@ -21,7 +21,7 @@ TAN_NUM_ANS = Math.tan(NUM1)
 ARCTAN_NUM_ANS = Math.atan(NUM1)
 TANHYP_NUM_ANS = Math.tanh(NUM1)
 Y_TO_POWER_X_ANS = NUM1 ** NUM2
-# FACTORIAL_NUM_ANS = Math::Gamma(DIGIT+1).to_i
+FACTORIAL_NUM_ANS = (1..DIGIT).inject(:*)
 PI_TO_POWER_X_ANS = Math::PI ** NUM1
 LOG_NUM_ANS = Math.log(NUM1)
 TEN_TO_POWER_X_ANS = 10 ** NUM1
@@ -41,7 +41,7 @@ When("I click a number") do
 end
 
 When("I click add") do
-pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_plus
 end
 
 When("I click another number") do
@@ -134,7 +134,7 @@ When("I click hyp button") do
 end
 
 Then("I should receive the sin hyperbolic of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq SINHYP_NUM_ANS.to_s
 end
 
 When("I click cos button") do
@@ -142,11 +142,11 @@ When("I click cos button") do
 end
 
 Then("I should receive the cos of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq COS_NUM_ANS.to_s
 end
 
 Then("I should receive the arc cos of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq CUBE_NUM_ANS.to_s
 end
 
 Then("I should receive the cos hyperbolic of a number answer") do
