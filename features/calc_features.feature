@@ -254,6 +254,7 @@ Feature: Calculator Functionality
     And I click equals
     Then I should receive one divided by x answer
 
+  @deleting
   Scenario: Deleting an input
     Given I am on the calculator app
     When I click a number
@@ -264,13 +265,14 @@ Feature: Calculator Functionality
     And I click equals
     Then I should receive Deleting an input answer
 
+  @adding_previous_ans
   Scenario: Adding a previous answer
-  Given I am on the calculator app
-  When I click a number
-  And I click add
-  And I click another number
-  And I click equals
-  And I click answer
-  And I click add
-  And I click equals
-  Then I should receive Adding a previous answer
+    Given I am on the calculator app
+    When I click a number
+    And I click add
+    And I click another number
+    And I click equals
+    And I click answer
+    And I click add
+    And I click equals
+    Then I should receive Adding a previous answer
