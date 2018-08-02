@@ -43,6 +43,8 @@ class MainPage
   BUTTON_8 = "com.faqihstudio.scientificcalculator:id/button8"
   BUTTON_9 = "com.faqihstudio.scientificcalculator:id/button9"
 
+  DISPLAY1 = "com.faqihstudio.scientificcalculator:id/txtOutput"
+  DISPLAY2 = "com.faqihstudio.scientificcalculator:id/txtInput"
   DISPLAY = "android.widget.EditText"
 
 
@@ -86,7 +88,13 @@ class MainPage
 
   def on_display
     # puts ">>>>>>>#{$driver.find_element(:id, /^com.faqihstudio.scientificcalculator:id\/txt[a-z]*$/).text}"
-    $driver.find_element(:class, DISPLAY).text
+    # $driver.find_element(:class, DISPLAY).text
+    text = ''
+    begin
+      $driver.find_element(:id, DISPLAY1).text
+    rescue
+      $driver.find_element(:id, DISPLAY2).text
+    end
   end
 
   def click_plus
@@ -186,7 +194,7 @@ class MainPage
     $driver.find_element(:id, BUTTON_SHIFT).click
     $driver.find_element(:id, BUTTON_0).click
   end
-  
+
   def click_history_item i
     $driver.find_elements(:class, HISTORY_ITEMS)[i].click
   end

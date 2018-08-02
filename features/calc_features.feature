@@ -277,16 +277,16 @@ Feature: Calculator Functionality
     And I click equals
     Then I should receive Adding a previous answer
 
-  @add_subtract_memory
-  Scenario: Using M+/M-/MR
-    Given I am on the calculator app
-    When I click a number
-    And I click on M+
-    And I click another number
-    And I click shift button
-    And I click on M+
-    And I click MR
-    Then I should receive the subtracting two numbers answer
+  # @add_subtract_memory
+  # Scenario: Using M+/M-/MR
+  #   Given I am on the calculator app
+  #   When I click a number
+  #   And I click on M+
+  #   And I click another number
+  #   And I click shift button
+  #   And I click on M+
+  #   And I click MR
+  #   Then I should receive the subtracting two numbers answer
 
   @history_positive
   Scenario: Getting a previous answer from the history
