@@ -54,7 +54,8 @@ When("I click equals") do
 end
 
 Then("I should receive adding two numbers answer") do
-  expect(mainpage.on_display.to_f).to eq ADD_TWO_NUMS_ANS
+  result = mainpage.on_display
+  expect(result).to eq ADD_TWO_NUMS_ANS.truncate(result.split('.')[1].size).to_s
 end
 
 When("I click subtract") do
@@ -62,7 +63,6 @@ When("I click subtract") do
 end
 
 Then("I should receive the subtracting two numbers answer") do
-  # puts mainpage.on_display.to_f
   expect(mainpage.on_display).to eq "−"+(SUB_TWO_NUMS_ANS).abs.to_s
 end
 
@@ -71,7 +71,8 @@ When("I click divide") do
 end
 
 Then("I should receive the dividing two numbers answer") do
-  expect(mainpage.on_display).to eq DIV_TWO_NUMS_ANS.to_s
+  result = mainpage.on_display
+  expect(result).to eq DIV_TWO_NUMS_ANS.truncate(result.split('.')[1].size).to_s
 end
 
 When("I click multiply") do
@@ -79,7 +80,8 @@ When("I click multiply") do
 end
 
 Then("I should receive the multiplying two numbers answer") do
-  expect(mainpage.on_display).to eq MULT_TWO_NUMS_ANS.to_s
+  result = mainpage.on_display
+  expect(result).to eq MULT_TWO_NUMS_ANS.truncate(result.split('.')[1].size).to_s
 end
 
 When("I click sqrt button") do
@@ -91,7 +93,8 @@ When("I click close bracket") do
 end
 
 Then("I should receive the sqrt of the numbers") do
-  expect(mainpage.on_display).to eq SQRT_NUM_ANS.to_s
+  result = mainpage.on_display
+  expect(result).to eq SQRT_NUM_ANS.truncate(result.split('.')[1].size).to_s
 end
 
 When("I click radian button") do
@@ -103,7 +106,8 @@ When("I click shift button") do
 end
 
 Then("I should receive the cube root of a number answer") do
-  expect(mainpage.on_display).to eq CUBE_ROOT_NUM_ANS.to_s
+  result = mainpage.on_display
+  expect(result).to eq CUBE_ROOT_NUM_ANS.truncate(result.split('.')[1].size).to_s
 end
 
 When("I click square button") do
@@ -111,7 +115,8 @@ When("I click square button") do
 end
 
 Then("I should receive the square of a number answer") do
-  expect(mainpage.on_display).to eq SQUARE_NUM_ANS.to_s
+  result = mainpage.on_display
+  expect(result).to eq SQUARE_NUM_ANS.truncate(result.split('.')[1].size).to_s
 end
 
 Then("I should receive the cube of a number answer") do
@@ -124,7 +129,8 @@ When("I click sin button") do
 end
 
 Then("I should receive the sin of a number answer") do
-  expect(mainpage.on_display).to eq SIN_NUM_ANS.to_s
+  result = mainpage.on_display
+  expect(result).to eq SIN_NUM_ANS.truncate(result.split('.')[1].size).to_s
 end
 
 Then("I should receive the arc sin of a number answer") do
@@ -189,8 +195,8 @@ Then("I should receive y to the x of a number answer") do
   expect(result).to eq Y_TO_POWER_X_ANS.truncate(result.split('.')[1].size).to_s
 end
 
-When("I click {int} button") do |int|
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click factorial") do
+  mainpage.click_factorial # Write code here that turns the phrase above into concrete actions
 end
 
 When("I click a digit") do

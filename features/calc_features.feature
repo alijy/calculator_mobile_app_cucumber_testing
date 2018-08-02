@@ -183,8 +183,7 @@ Feature: Calculator Functionality
   Scenario: factorial of a number
     Given I am on the calculator app
     When I click a digit
-    And I click shift button
-    And I click 4 button
+    And I click factorial
     And I click equals
     Then I should receive factorial of a number answer
 
