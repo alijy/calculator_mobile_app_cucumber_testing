@@ -283,7 +283,7 @@ When("I click history") do
 end
 
 When("I click on a previous answer from the history") do
-  mainpage.click_history_item 1  # Write code here that turns the phrase above into concrete actions
+  mainpage.click_history_item 0  # Write code here that turns the phrase above into concrete actions
 end
 
 Then("I should receive a previous answer") do
