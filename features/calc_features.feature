@@ -79,7 +79,8 @@ Feature: Calculator Functionality
   @sin_of_num
   Scenario: sin of a Number
     Given I am on the calculator app
-    When I click sin button
+    When I click radian button
+    And I click sin button
     And I click a number
     And I click close bracket
     And I click equals
@@ -91,8 +92,6 @@ Feature: Calculator Functionality
     When I click radian button
     And I click shift button
     And I click sin button
-    # And I click zero button
-    # And I click the point button
     And I click a number
     And I click close bracket
     And I click equals
@@ -111,7 +110,8 @@ Feature: Calculator Functionality
   @cos_of_num
   Scenario: cos of a Number
     Given I am on the calculator app
-    When I click cos button
+    When I click radian button
+    And I click cos button
     And I click a number
     And I click close bracket
     And I click equals
@@ -120,10 +120,9 @@ Feature: Calculator Functionality
   @arccos_of_num
   Scenario: arc cos of a Number
     Given I am on the calculator app
-    When I click shift button
+    When I click radian button
+    And I click shift button
     And I click cos button
-    # And I click zero button
-    # And I click the point button
     And I click a number
     And I click close bracket
     And I click equals
@@ -142,7 +141,8 @@ Feature: Calculator Functionality
   @tan_of_num
   Scenario: tan of a Number
     Given I am on the calculator app
-    When I click tan button
+    When I click radian button
+    And I click tan button
     And I click a number
     And I click close bracket
     And I click equals
@@ -151,10 +151,9 @@ Feature: Calculator Functionality
   @arctan_of_num
   Scenario: arc tan of a Number
     Given I am on the calculator app
-    When I click shift button
+    When I click radian button
+    And I click shift button
     And I click tan button
-    # And I click zero button
-    # And I click the point button
     And I click a number
     And I click close bracket
     And I click equals
@@ -183,7 +182,7 @@ Feature: Calculator Functionality
   @factorial_of_num
   Scenario: factorial of a number
     Given I am on the calculator app
-    When I click a number
+    When I click a digit
     And I click shift button
     And I click 4 button
     And I click equals
