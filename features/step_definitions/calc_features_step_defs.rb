@@ -129,7 +129,8 @@ end
 
 Then("I should receive the arc sin of a number answer") do
   result = mainpage.on_display
-  expect(result.to_f).to eq ARCSIN_NUM_ANS.truncate(result.split('.')[1].size)
+  expect(result.to_f).to eq ARCSIN_NUM_ANS.round(result.split('.')[1].size)
+  # expect(result).to eq ("%.#{result.split('.')[1].size}f" % ARCSIN_NUM_ANS)
 end
 
 When("I click hyp button") do
@@ -138,7 +139,7 @@ end
 
 Then("I should receive the sin hyperbolic of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq SINHYP_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq SINHYP_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click cos button") do
@@ -147,12 +148,12 @@ end
 
 Then("I should receive the cos of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq COS_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq COS_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive the arc cos of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq ARCCOS_NUM_ANS.truncate(result.split('.')[1].size).to_s
+  expect(result).to eq ARCCOS_NUM_ANS.round(result.split('.')[1].size).to_s
 end
 
 Then("I should receive the cos hyperbolic of a number answer") do
