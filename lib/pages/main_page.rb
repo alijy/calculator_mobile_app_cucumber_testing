@@ -42,7 +42,8 @@ class MainPage
   BUTTON_8 = "com.faqihstudio.scientificcalculator:id/button8"
   BUTTON_9 = "com.faqihstudio.scientificcalculator:id/button9"
 
-  DISPLAY = "com.faqihstudio.scientificcalculator:id/txtOutput"
+  DISPLAY1 = "com.faqihstudio.scientificcalculator:id/txtOutput"
+  DISPLAY2 = "com.faqihstudio.scientificcalculator:id/txtInput"
 
 
   def on_app?
@@ -84,7 +85,13 @@ class MainPage
   end
 
   def on_display
-    $driver.find_element(:id, DISPLAY).text
+    text = ''
+    begin
+      text = $driver.find_element(:id, DISPLAY1).text
+    rescue
+      text = $driver.find_element(:id, DISPLAY2).text
+    end
+    text
   end
 
   def click_plus
