@@ -84,7 +84,6 @@ class MainPage
   end
 
   def on_display
-    sleep 3
     $driver.find_element(:id, DISPLAY).text
   end
 
