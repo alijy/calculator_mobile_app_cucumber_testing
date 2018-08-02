@@ -299,6 +299,7 @@ Feature: Calculator Functionality
     And I click subtract
     And I click another number
     And I click equals
+    And I click a number
     And I click history
     And I click on a previous answer from the history
     Then I should receive a previous answer
