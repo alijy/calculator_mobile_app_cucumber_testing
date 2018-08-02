@@ -32,6 +32,7 @@ ONE_DIVIDED_BY_NUM_ANS = 1 / (NUM1)
 DELETING_AN_INPUT_ANS = NUM1 + NUM2
 ADDING_A_PREVIOUS_ANS = NUM1 + NUM2 + NUM1
 PI_MULTI_BY_A_NUM = Math::PI*NUM1
+DELETE_INPUT_ANS = NUM1 + NUM2
 
 Given("I am on the calculator app") do
   mainpage.on_app?
@@ -236,7 +237,7 @@ end
 
 Then("I should receive the ln of a number answer") do
   result = mainpage.on_display
-  expect(result).to eq LN_NUM_ANS.round(result.split('.')[1].size).to_s
+  expect(result).to eq "−"+(LN_NUM_ANS.round(result.split('.')[1].size)).abs.to_s
 end
 
 Then("I should receive e to the power of a number answer") do
@@ -259,17 +260,19 @@ Then("I should receive one divided by x answer") do
 end
 
 When("I click delete") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_back # Write code here that turns the phrase above into concrete actions
 end
 
 Then("I should receive Deleting an input answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  result = mainpage.on_display
+  expect(result).to eq DELETE_INPUT_ANS.round(result.split('.')[1].size).to_s
 end
 
 When("I click answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_ans
 end
 
 Then("I should receive Adding a previous answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  result = mainpage.on_display
+  expect(result).to eq ADDING_A_PREVIOUS_ANS.round(result.split('.')[1].size).to_s
 end
