@@ -178,6 +178,10 @@ When("I click {int} button") do |int|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
+When("I click a digit") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 Then("I should receive factorial of a number answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
