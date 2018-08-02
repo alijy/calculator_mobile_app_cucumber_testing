@@ -163,7 +163,7 @@ Feature: Calculator Functionality
   Scenario: tan hyperbolic of a Number
     Given I am on the calculator app
     When I click hyp button
-    And I click sin button
+    And I click tan button
     And I click a number
     And I click close bracket
     And I click equals
