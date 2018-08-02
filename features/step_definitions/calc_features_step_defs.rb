@@ -61,7 +61,6 @@ When("I click subtract") do
 end
 
 Then("I should receive the subtracting two numbers answer") do
-  # puts mainpage.on_display.to_f
   expect(mainpage.on_display).to eq "−"+(SUB_TWO_NUMS_ANS).abs.to_s
 end
 
@@ -191,11 +190,13 @@ Then("I should receive factorial of a number answer") do
 end
 
 When("I click Pi") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_shift
+  mainpage.click_digit 1
 end
 
 Then("I should receive Pi multiplied to a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  result = mainpage.on_display
+  expect(result).to eq
 end
 
 When("I click log button") do
