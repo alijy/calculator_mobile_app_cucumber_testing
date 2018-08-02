@@ -21,7 +21,7 @@ TAN_NUM_ANS = Math.tan(NUM1)
 ARCTAN_NUM_ANS = Math.atan(NUM1)
 TANHYP_NUM_ANS = Math.tanh(NUM1)
 Y_TO_POWER_X_ANS = NUM1 ** NUM2
-FACTORIAL_NUM_ANS = Math::Gamma(DIGIT+1).to_i
+# FACTORIAL_NUM_ANS = Math::Gamma(DIGIT+1).to_i
 PI_TO_POWER_X_ANS = Math::PI ** NUM1
 LOG_NUM_ANS = Math.log(NUM1)
 TEN_TO_POWER_X_ANS = 10 ** NUM1
@@ -53,7 +53,7 @@ When("I click equals") do
 end
 
 Then("I should receive adding two numbers answer") do
-  expect(mainpage.on_display).to eq ADD_TWO_NUMS_ANS
+  expect(mainpage.on_display).to eq ADD_TWO_NUMS_ANS.to_s
 end
 
 When("I click subtract") do
@@ -61,7 +61,7 @@ When("I click subtract") do
 end
 
 Then("I should receive the subtracting two numbers answer") do
-  expect(mainpage.on_display).to eq SUB_TWO_NUMS_ANS
+  expect(mainpage.on_display).to eq SUB_TWO_NUMS_ANS.to_s
 end
 
 When("I click divide") do
@@ -69,7 +69,7 @@ When("I click divide") do
 end
 
 Then("I should receive the dividing two numbers answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq DIV_TWO_NUMS_ANS.to_s
 end
 
 When("I click multiply") do
@@ -77,7 +77,7 @@ When("I click multiply") do
 end
 
 Then("I should receive the multiplying two numbers answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq MULT_TWO_NUMS_ANS.to_s
 end
 
 When("I click sqrt button") do
@@ -89,7 +89,7 @@ When("I click close bracket") do
 end
 
 Then("I should receive the sqrt of the numbers") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq SQRT_NUM_ANS.to_s
 end
 
 When("I click radian button") do
@@ -101,7 +101,7 @@ When("I click shift button") do
 end
 
 Then("I should receive the cube root of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq CUBE_ROOT_NUM_ANS.to_s
 end
 
 When("I click square button") do
@@ -109,11 +109,11 @@ When("I click square button") do
 end
 
 Then("I should receive the square of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq SQUARE_NUM_ANS.to_s
 end
 
 Then("I should receive the cube of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq CUBE_NUM_ANS.to_s
 end
 
 When("I click sin button") do
@@ -121,12 +121,12 @@ When("I click sin button") do
 end
 
 Then("I should receive the sin of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq SIN_NUM_ANS.to_s
 end
 
 Then("I should receive the arc sin of a number answer") do
   result = mainpage.on_display
-  expect(result.to_f).to eq Math.asin(NUM1.to_f).truncate(result.split('.')[1].size)
+  expect(result.to_f).to eq ARCSIN_NUM_ANS.truncate(result.split('.')[1].size)
 end
 
 When("I click hyp button") do
