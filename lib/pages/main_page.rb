@@ -171,4 +171,9 @@ class MainPage
     $driver.find_element(:id, BUTTON_Y_TO_X).click
   end
 
+  def click_pi
+    $driver.find_element(:id, BUTTON_SHIFT).click
+    $driver.find_element(:id, BUTTON_1).click
+  end
+
 end

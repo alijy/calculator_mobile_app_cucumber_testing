@@ -31,6 +31,7 @@ PERCENT_OF_NUM_ANS = NUM1 / 100
 ONE_DIVIDED_BY_NUM_ANS = 1 / (NUM1)
 DELETING_AN_INPUT_ANS = NUM1 + NUM2
 ADDING_A_PREVIOUS_ANS = NUM1 + NUM2 + NUM1
+PI_MULTI_BY_A_NUM = Math::PI*NUM1
 
 Given("I am on the calculator app") do
   mainpage.on_app?
@@ -57,7 +58,7 @@ Then("I should receive adding two numbers answer") do
 end
 
 When("I click subtract") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_subtract
 end
 
 Then("I should receive the subtracting two numbers answer") do
@@ -65,7 +66,7 @@ Then("I should receive the subtracting two numbers answer") do
 end
 
 When("I click divide") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_divide
 end
 
 Then("I should receive the dividing two numbers answer") do
@@ -73,7 +74,7 @@ Then("I should receive the dividing two numbers answer") do
 end
 
 When("I click multiply") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_multiply
 end
 
 Then("I should receive the multiplying two numbers answer") do
@@ -81,7 +82,7 @@ Then("I should receive the multiplying two numbers answer") do
 end
 
 When("I click sqrt button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_sqrt
 end
 
 When("I click close bracket") do
@@ -105,7 +106,7 @@ Then("I should receive the cube root of a number answer") do
 end
 
 When("I click square button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_sqaure
 end
 
 Then("I should receive the square of a number answer") do
@@ -130,7 +131,7 @@ Then("I should receive the arc sin of a number answer") do
 end
 
 When("I click hyp button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_hyp
 end
 
 Then("I should receive the sin hyperbolic of a number answer") do
@@ -138,7 +139,7 @@ Then("I should receive the sin hyperbolic of a number answer") do
 end
 
 When("I click cos button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_cos
 end
 
 Then("I should receive the cos of a number answer") do
@@ -146,35 +147,35 @@ Then("I should receive the cos of a number answer") do
 end
 
 Then("I should receive the arc cos of a number answer") do
-  expect(mainpage.on_display).to eq CUBE_NUM_ANS.to_s
+  expect(mainpage.on_display).to eq ARCCOS_NUM_ANS.to_s
 end
 
 Then("I should receive the cos hyperbolic of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq COSHYP_NUM_ANS.to_s
 end
 
 When("I click tan button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_tan
 end
 
 Then("I should receive the tan of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq TAN_NUM_ANS.to_s
 end
 
 Then("I should receive the arc tan of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq ARCTAN_NUM_ANS.to_s
 end
 
 Then("I should receive the tan hyperbolic of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq ARCTAN_NUM_ANS.to_s
 end
 
 When("I click y^x button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_y_to_x
 end
 
 Then("I should receive y to the x of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq Y_TO_POWER_X_ANS.to_s
 end
 
 When("I click {int} button") do |int|
@@ -186,49 +187,49 @@ When("I click a digit") do
 end
 
 Then("I should receive factorial of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq FACTORIAL_NUM_ANS.to_s
 end
 
 When("I click Pi") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_pi
 end
 
 Then("I should receive Pi multiplied to a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq PI_MULTI_BY_A_NUM.to_s
 end
 
 When("I click log button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_log
 end
 
 Then("I should receive the log of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq LOG_NUM_ANS.to_s
 end
 
 Then("I should receive ten to the power of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq TEN_TO_POWER_X_ANS.to_s
 end
 
 When("I click ln button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_ln
 end
 
 Then("I should receive the ln of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq LN_NUM_ANS.to_s
 end
 
 Then("I should receive e to the power of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq E_TO_POWER_X_ANS.to_s
 end
 
 When("I click percent button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  mainpage.click_percent
 end
 
 Then("I should receive percent of a number answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq PERCENT_OF_NUM_ANS.to_s
 end
 
 Then("I should receive one divided by x answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(mainpage.on_display).to eq ONE_DIVIDED_BY_NUM_ANS.to_s
 end
