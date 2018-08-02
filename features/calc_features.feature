@@ -273,5 +273,21 @@ Feature: Calculator Functionality
     And I click equals
     And I click answer
     And I click add
+    And I click another number
     And I click equals
     Then I should receive Adding a previous answer
+
+  @History
+  Scenario: Getting a previous answer from the history
+    Given I am on the calculator app
+    When I click a number
+    And I click add
+    And I click another number
+    And I click equals
+    And I click a number
+    And I click subtract
+    And I click another number
+    And I click equals
+    And I click history
+    And I click on a previous answer from the history
+    Then I should receive a previous answer

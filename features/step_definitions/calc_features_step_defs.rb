@@ -30,7 +30,7 @@ E_TO_POWER_X_ANS = (Math::E) ** NUM1
 PERCENT_OF_NUM_ANS = NUM1 / 100
 ONE_DIVIDED_BY_NUM_ANS = 1 / (NUM1)
 DELETING_AN_INPUT_ANS = NUM1 + NUM2
-ADDING_A_PREVIOUS_ANS = NUM1 + NUM2 + NUM1
+ADDING_A_PREVIOUS_ANS = NUM1 + NUM2 + NUM2
 PI_MULTI_BY_A_NUM = Math::PI*NUM1
 DELETE_INPUT_ANS = NUM1 + NUM2
 
@@ -275,4 +275,17 @@ end
 Then("I should receive Adding a previous answer") do
   result = mainpage.on_display
   expect(result).to eq ADDING_A_PREVIOUS_ANS.round(result.split('.')[1].size).to_s
+end
+
+When("I click history") do
+  mainpage.click_history # Write code here that turns the phrase above into concrete actions
+end
+
+When("I click on a previous answer from the history") do
+  mainpage.click_history_item 1  # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should receive a previous answer") do
+  result = mainpage.on_display
+  expect(result).to eq ADD_TWO_NUMS_ANS.round(result.split('.')[1].size).to_s # Write code here that turns the phrase above into concrete actions
 end

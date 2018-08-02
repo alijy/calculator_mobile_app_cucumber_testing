@@ -6,6 +6,7 @@ class MainPage
   BUTTON_MR = "com.faqihstudio.scientificcalculator:id/buttonMR"
   BUTTON_MS = "com.faqihstudio.scientificcalculator:id/buttonMS"
   BUTTON_MP = "com.faqihstudio.scientificcalculator:id/buttonMp"
+  HISTORY_ITEMS = "android.widget.Button"
 
   BUTTON_HYP = "com.faqihstudio.scientificcalculator:id/buttonHyp"
   BUTTON_SIN = "com.faqihstudio.scientificcalculator:id/buttonSin"
@@ -179,6 +180,14 @@ class MainPage
   def click_factorial
     $driver.find_element(:id, BUTTON_SHIFT).click
     $driver.find_element(:id, BUTTON_4).click
+  end
+
+  def click_history
+    $driver.find_element(:id, BUTTON_SHIFT).click
+    $driver.find_element(:id, BUTTON_0).click
+  end
+  def click_history_item i
+    $driver.find_elements(:class, HISTORY_ITEMS)[i]
   end
 
 end
