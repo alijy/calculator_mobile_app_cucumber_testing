@@ -269,7 +269,8 @@ Feature: Calculator Functionality
   When I click a number
   And I click add
   And I click another number
-  And I click add
+  And I click equals
   And I click answer
+  And I click add
   And I click equals
   Then I should receive Adding a previous answer
