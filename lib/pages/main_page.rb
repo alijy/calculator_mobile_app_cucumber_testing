@@ -62,7 +62,7 @@ class MainPage
   end
 
   def enter_number num
-    num.split('').each do |c|
+    num.to_s.split('').each do |c|
       (c == ".") ? click_dot : click_digit(c)
     end
   end
