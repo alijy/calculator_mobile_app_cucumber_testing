@@ -137,6 +137,7 @@ end
 Then("I should receive the arc sin of a number answer") do
   result = mainpage.on_display
   expect(result.to_f).to eq ARCSIN_NUM_ANS.round(result.split('.')[1].size)
+  # expect(result).to eq ("%.#{result.split('.')[1].size}f" % ARCSIN_NUM_ANS)
 end
 
 When("I click hyp button") do
@@ -190,7 +191,7 @@ When("I click y^x button") do
   mainpage.click_y_to_x
 end
 
-Then("I should receive y to the x of a number answer") do
+Then("I should receive y to the power x answer") do
   result = mainpage.on_display
   expect(result).to eq Y_TO_POWER_X_ANS.round(result.split('.')[1].size).to_s
 end
